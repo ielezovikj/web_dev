@@ -5,12 +5,12 @@ This is code that I've written as I went through Udacity's Web Development cours
 Things that are covered:
 ------------------------
 
--Templates
--Jinja2
--Back-end credential validation
--Hashing cookies
--Hmac, Bcrypt
--HTTPS
+1. Templates
+2. Jinja2
+3. Back-end credential validation
+4. Hashing cookies
+5. Hmac, Bcrypt
+6. HTTPS
 
 To run it:
 ```
