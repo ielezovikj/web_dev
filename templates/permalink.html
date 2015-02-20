@@ -1,0 +1,11 @@
+{% extends "blog.html" %}
+{% block content %}
+<div class = "post">
+  <div class = "subject"> {{subject}}  <div class = "date">  {{created.strftime("%b %d, %Y")}} </div></div>
+  <hr>
+  <pre class = "content"> {{content | safe}} </pre>
+</div>
+<br>
+<br>
+
+{% endblock %}

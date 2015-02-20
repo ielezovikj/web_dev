@@ -1,0 +1,14 @@
+{% extends "blog.html" %}
+{% block content %}
+{% for post in posts: %}
+<div class = "post">
+  <div class = "subject"> {{post.subject}}  <div class = "date">  {{post.created.strftime("%b %d, %Y")}} </div></div>
+  <hr>
+  <pre class = "content"> {{post.content | safe}} </pre>
+</div>
+<br>
+<br>
+
+
+{% endfor %}
+{% endblock %}

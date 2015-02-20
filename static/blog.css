@@ -1,0 +1,82 @@
+.error {
+  color: red;
+}
+
+body {
+  font-family: sans-serif;
+  width: 800px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+
+.date {
+  font-family: sans-serif;
+  margin: 20;
+}
+.post + .post {
+  margin-top 20px;
+  font-size: 17px;
+}
+
+.subject {
+  font-weight: bold;
+  font-size: 23px;
+
+}
+
+.content {
+  margin: 0;
+  font-size: 14px;
+  white-space: pre-wrap; /*So that the text doesn't escape to the right. */
+}
+
+hr {
+  margin: 20px auto;
+  height: 2px;
+  background: black;
+  padding: 0px;
+
+  margin-top: -10px;
+}
+
+.main-title {
+  display: block;
+  color: #222;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  margin-bottom: 30px;
+}
+
+label {
+  display: block;
+  font_size: 20px;
+}
+
+
+input[type=text] {
+  width: 400px;
+  font-size: 20px;
+  padding: 2px;
+}
+textarea {
+  width: 400px;
+  height: 200px;
+  font-size: 17px;
+  font-family: monospace;
+}
+input[type=submit] {
+  font_size: 24px;
+}
+
+.date {
+  position: relative;
+  left: 710px;
+  bottom: 18px;
+  font-weight: lighter;
+  font-style: oblique;
+  color: #006699;
+  font-size: 14px;
+}

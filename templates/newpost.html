@@ -1,0 +1,20 @@
+{% extends "blog.html" %}
+
+{% block content %}
+<br>
+<br>
+<br>
+<form method = "post" style = "form">
+  <label>
+    <h3> New BlogPost </h3>
+    <div> subject </div>
+    <input placeholder = "The subject or title goes in here." type = "text" name = "subject" value = "{{subject}}">
+  </label>
+  <label>
+    <div> content </div>
+
+    <textarea placeholder = "The text goes in here." name = "content">{{content}}</textarea>
+  </label>
+<div class = "error">{{error}} </div>
+<input type = "submit">
+{% endblock %}
