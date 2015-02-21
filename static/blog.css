@@ -54,7 +54,15 @@ label {
   display: block;
   font_size: 20px;
 }
+/* begin for signup table */
+.label {
+	text-align: right;
+}
 
+.error {
+	color : red;
+}
+/* end for signup.html */
 
 input[type=text] {
   width: 400px;
