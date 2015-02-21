@@ -152,6 +152,11 @@ class SignUp(Handler):
         verify = "" if not valid_match(password, verify) else verify
         email = self.request.get("email")
         username_error = "" if valid_username(username) else "That's not a valid username."
+        usernames = db.GqlQuery("select username from User")
+        
+        
+        
+            
         password_error = "" if valid_password(password) else "That wasn't a valid password."
         verify_error = "" if valid_match(password, verify) else "Your passwords didn't match."
         if verify_error != "":
@@ -160,11 +165,16 @@ class SignUp(Handler):
         email_error = "" if valid_email(email) or email == "" else "That's not a valid email."
         error = False
         error = (username_error != "") or (password_error != "") or (verify_error != "") or (email_error != "")
+        if username_error == "":
+            for x in usernames:
+                if x.username == username:
+                    username_error = "That user already exists."
+                    error = True
+        
         if error:
             self.render("signup.html", username = username, password = password, verify = verify, email = email,
             username_error =  username_error, password_error = password_error, verify_error = verify_error, email_error = email_error)
         else:
-            
             credentials = {}
             credentials['username'] = username
             credentials['password'] = password
