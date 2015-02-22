@@ -189,7 +189,20 @@ class SignUp(Handler):
             self.redirect("/welcome")
        
         
-            
+class Login(Handler):
+    def get(self):
+        self.render("login.html")
+    def post(self):
+        username = self.request.get("username")
+        password = self.request.get("password")
+        visiting_user = db.GqlQuery("select * from User where username = '%s'" %username).fetch(1)
+        if len(visiting_user) == 0:
+            self.render("login.html", login = "Invalid login")
+        else:
+            self.redirect("/welcome")
+    
+        
+        
 class Welcome(Handler):
     def get(self):
         user_id_cookie = self.request.cookies.get("user_id")
@@ -204,7 +217,8 @@ app = webapp2.WSGIApplication([('/', MainPage),
 (r'/blog/([0-9]+)', Permalink),
 ('/blog', Blog),
 ('/signup', SignUp),
-('/welcome', Welcome)
+('/welcome', Welcome),
+('/login', Login),
 
 ], debug = True)
 
